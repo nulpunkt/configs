@@ -15,7 +15,6 @@ set nohidden
 set showmatch
 set autoread
 set suffixes=.bak,~,.o,.h,.info,.swp,.class
-set dir=/tmp/jsn/
 set wildmenu
 set wildmode=full
 set hlsearch
