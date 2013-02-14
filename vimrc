@@ -19,6 +19,7 @@ set wildmenu
 set wildmode=full
 set hlsearch
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType python set expandtab
 
 syntax on
 filetype on
