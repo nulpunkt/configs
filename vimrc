@@ -19,13 +19,18 @@ set dir=/tmp/jsn/
 set wildmenu
 set wildmode=full
 set hlsearch
+
+" Cool search plugin
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_working_path_mode = '0'
+
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 syntax on
 filetype on
 au BufNewFile,BufRead *.scss set filetype=css
 
-map <C-p> :w<CR>:!/usr/bin/php -l %<CR>
+autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 " map <C-u> :w<CR>:!~/bin/phpu %<CR>
 
 " Easy window navigation
@@ -33,6 +38,9 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
+" Easy window resize
+map L <C-w>>
+map H <C-w><
 
 nnoremap <silent> <F10> :%s/$//g<CR>:%s// /g<CR>
 command! FIXMACLINES <ESC>:%s/^M/\r/g
