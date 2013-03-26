@@ -15,6 +15,7 @@ set nohidden
 set showmatch
 set autoread
 set suffixes=.bak,~,.o,.h,.info,.swp,.class
+set dir=/tmp/
 set wildmenu
 set wildmode=full
 set hlsearch
@@ -24,10 +25,12 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = '0'
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+autocmd FileType markdown setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
 filetype on
 au BufNewFile,BufRead *.scss set filetype=css
+au BufRead,BufNewFile *.go set filetype=go
 
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 " map <C-u> :w<CR>:!~/bin/phpu %<CR>
