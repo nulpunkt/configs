@@ -15,7 +15,7 @@ set nohidden
 set showmatch
 set autoread
 set suffixes=.bak,~,.o,.h,.info,.swp,.class
-set dir=/tmp/jsn/
+set dir=/tmp/
 set wildmenu
 set wildmode=full
 set hlsearch
@@ -24,6 +24,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 syntax on
 filetype on
 au BufNewFile,BufRead *.scss set filetype=css
+au BufRead,BufNewFile *.go set filetype=go
 
 map <C-p> :w<CR>:!/usr/bin/php -l %<CR>
 " map <C-u> :w<CR>:!~/bin/phpu %<CR>
