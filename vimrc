@@ -23,11 +23,7 @@ set hlsearch
 execute pathogen#infect()
 
 " Cool search plugin
-"set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_working_path_mode = '0'
-
-" ruby
-"set runtimepath^=~/.vim/bundle/vim-ruby
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType markdown setlocal formatoptions-=c formatoptions-=r formatoptions-=o
