@@ -2,8 +2,8 @@
 	email = nulpunkt@gmail.com
 	name = Jesper
 
-[aliases]
-	st status
-	ci commit
-	aa add --all
-	head log -1
+[alias]
+	st = status
+	ci = commit
+	aa = add --all
+	head = log -1
