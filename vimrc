@@ -33,6 +33,8 @@ filetype on
 au BufNewFile,BufRead *.scss set filetype=css
 au BufRead,BufNewFile *.go set filetype=go
 
+colorscheme jellybeans
+
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 " map <C-u> :w<CR>:!~/bin/phpu %<CR>
 

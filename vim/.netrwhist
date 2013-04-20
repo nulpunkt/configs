@@ -1,3 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =4
 let g:netrw_dirhist_1='/srv/udvikling/svn/jsn/trunk.admin/includes/util'
+let g:netrw_dirhist_2='/Users/jesper/dev/python/server'
+let g:netrw_dirhist_3='/Users/jesper/dev/python'
+let g:netrw_dirhist_4='/Users/jesper/dev/python/sot'

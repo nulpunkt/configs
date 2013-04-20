@@ -84,3 +84,11 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+snippet testfile
+	import unittest
+	class ${1:Testname}Test(unittest.TestCase):
+		def test_${2:casename}(self):
+			${3:testcode}
+
+	if __name__ == '__main__':
+		unittest.main()	
