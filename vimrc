@@ -26,7 +26,6 @@ execute pathogen#infect()
 let g:ctrlp_working_path_mode = '0'
 
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType markdown setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 syntax on
 filetype on
