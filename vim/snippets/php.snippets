@@ -214,3 +214,12 @@ snippet fun
 # $... = array (...)
 snippet array
 	$${1:arrayName} = array('${2}' => ${3});${4}
+snippet testfile
+	<?php
+	class ${1:Class}Test extends PHPUnit_Framework_TestCase
+	{
+		public function test${2:Function}()
+		{
+			${3:// Test code}
+		}
+	}
