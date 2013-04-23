@@ -1,5 +1,7 @@
 Xft.dpi: 96
 
+XTerm*termName: xterm-256color
+
 XTerm*faceName: Terminus
 XTerm*faceSize: 10
 XTerm*boldMode: false
@@ -19,4 +21,3 @@ XTerm*multiClickTime: 250
 XTerm*iconPixmap: /usr/include/X11/bitmaps/monitor.xbm
 
 XTerm*charClass: 33:48,35:48,37:48,43:48,45-47:48,64:48,95:48,126:48,35:48
-
