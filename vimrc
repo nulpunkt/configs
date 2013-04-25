@@ -1,3 +1,17 @@
+" Use Pathogen:
+call pathogen#incubate()
+call pathogen#helptags()
+
+" Vundle
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Let Vundle manage Vundle (required)!
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+
+" The usual suspects
 syn on
 set nocompatible
 set number
@@ -20,7 +34,7 @@ set hlsearch
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
 
-execute pathogen#infect()
+let mapleader=","
 
 " Cool search plugin
 let g:ctrlp_working_path_mode = '0'
@@ -42,5 +56,9 @@ map <C-l> <C-w>l
 " Easy window resize
 map L <C-w>>
 map H <C-w><
+
+" More natural moving on long, wraped lines
+nnoremap k gk
+nnoremap j gj
 
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
