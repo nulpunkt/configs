@@ -19,6 +19,9 @@ set dir=/tmp/
 set wildmenu
 set wildmode=full
 set hlsearch
+" Dat pesky wait between <esc>O and insert..
+set timeout timeoutlen=1000 ttimeoutlen=100
+
 
 execute pathogen#infect()
 
