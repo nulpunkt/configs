@@ -16,19 +16,14 @@ set showmatch
 set autoread
 set suffixes=.bak,~,.o,.h,.info,.swp,.class
 set dir=/tmp/
-set wildmenu
-set wildmode=full
 set hlsearch
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
-
 
 execute pathogen#infect()
 
 " Cool search plugin
 let g:ctrlp_working_path_mode = '0'
-
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 
 syntax on
 filetype on
@@ -38,7 +33,6 @@ au BufRead,BufNewFile *.go set filetype=go
 colorscheme jellybeans
 
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
-" map <C-u> :w<CR>:!~/bin/phpu %<CR>
 
 " Easy window navigation
 map <C-h> <C-w>h
@@ -48,10 +42,5 @@ map <C-l> <C-w>l
 " Easy window resize
 map L <C-w>>
 map H <C-w><
-
-nnoremap <silent> <F10> :%s/$//g<CR>:%s// /g<CR>
-command! FIXMACLINES <ESC>:%s/^M/\r/g
-let php_sql_query=1                                                                                        
-let php_htmlInStrings=1
 
 vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
