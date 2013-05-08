@@ -10,6 +10,7 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
+Bundle 'cakebaker/scss-syntax.vim'
 
 " The usual suspects
 syn on
@@ -42,7 +43,6 @@ let g:ctrlp_working_path_mode = '0'
 
 syntax on
 filetype on
-au BufNewFile,BufRead *.scss set filetype=css
 au BufRead,BufNewFile *.go set filetype=go
 
 colorscheme jellybeans
