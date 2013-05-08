@@ -31,6 +31,7 @@ set autoread
 set suffixes=.bak,~,.o,.h,.info,.swp,.class
 set dir=/tmp/
 set hlsearch
+set clipboard=unnamed
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
 
@@ -56,6 +57,8 @@ map <C-l> <C-w>l
 " Easy window resize
 map L <C-w>>
 map H <C-w><
+" File in the current directory
+map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
 " More natural moving on long, wraped lines
 nnoremap k gk
