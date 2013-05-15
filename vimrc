@@ -11,6 +11,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
+Bundle "pangloss/vim-javascript"
 
 " The usual suspects
 syn on
