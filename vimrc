@@ -60,6 +60,8 @@ map L <C-w>>
 map H <C-w><
 " File in the current directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+" Transpose params
+map <Leader>sp :normal F(ldt,f)i, pF(lxx
 
 " More natural moving on long, wraped lines
 nnoremap k gk
