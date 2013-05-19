@@ -12,6 +12,7 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle "pangloss/vim-javascript"
+Bundle "scrooloose/syntastic"
 
 " The usual suspects
 syn on
