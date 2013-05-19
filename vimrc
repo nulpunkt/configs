@@ -63,6 +63,8 @@ map H <C-w><
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Transpose params
 map <Leader>sp :normal F(ldt,f)i, pF(lxx
+" For lemma project, find the most likley testfile
+map <Leader>lt :vs <C-R>=substitute(substitute(expand("%:p"), "\/lemma", "\/lemma\/tests", ""), "\.class", "Test", "")<CR> <CR>
 
 " More natural moving on long, wraped lines
 nnoremap k gk
