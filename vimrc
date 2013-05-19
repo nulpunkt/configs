@@ -50,6 +50,7 @@ au BufRead,BufNewFile *.go set filetype=go
 colorscheme jellybeans
 
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
+autocmd FileType python set expandtab
 
 " Easy window navigation
 map <C-h> <C-w>h
