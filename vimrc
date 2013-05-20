@@ -13,6 +13,7 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle "pangloss/vim-javascript"
 Bundle "scrooloose/syntastic"
+Bundle "tpope/vim-rails"
 
 " The usual suspects
 syn on
@@ -51,6 +52,8 @@ colorscheme jellybeans
 
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 autocmd FileType python set expandtab
+autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 " Easy window navigation
 map <C-h> <C-w>h
