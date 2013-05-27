@@ -11,9 +11,9 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle "pangloss/vim-javascript"
-Bundle "scrooloose/syntastic"
-Bundle "tpope/vim-rails"
+Bundle 'pangloss/vim-javascript'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-rails'
 
 " The usual suspects
 syn on
@@ -61,8 +61,8 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 " Easy window resize
-map L <C-w>>
-map H <C-w><
+map L <C-w><
+map H <C-w>>
 " File in the current directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Transpose params
