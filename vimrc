@@ -14,6 +14,7 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-rails'
+Bundle 'SirVer/ultisnips'
 
 " The usual suspects
 syn on
@@ -43,6 +44,11 @@ let mapleader=","
 
 " Cool search plugin
 let g:ctrlp_working_path_mode = '0'
+
+" Ultisnips
+let g:UltiSnipsExpandTrigger="<tab>" 
+let g:UltiSnipsJumpForwardTrigger="<tab>" 
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
 
 syntax on
 filetype on
