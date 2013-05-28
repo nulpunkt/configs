@@ -15,6 +15,7 @@ Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
 Bundle 'tpope/vim-rails'
 Bundle 'SirVer/ultisnips'
+Bundle 'mikewest/vimroom'
 
 " The usual suspects
 syn on
@@ -62,19 +63,21 @@ autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setl
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 " Easy window navigation
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 " Easy window resize
-map L <C-w><
-map H <C-w>>
+nnoremap L <C-w><
+nnoremap H <C-w>>
 " File in the current directory
-map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Transpose params
-map <Leader>sp :normal F(ldt,f)i, pF(lxx
+nnoremap <Leader>sp :normal F(ldt,f)i, pF(lxx
 " For lemma project, find the most likley testfile
-map <Leader>lt :vs <C-R>=substitute(substitute(expand("%:p"), "\/lemma", "\/lemma\/tests", ""), "\.class", "Test", "")<CR> <CR>
+nnoremap <Leader>lt :vs <C-R>=substitute(substitute(expand("%:p"), "\/lemma", "\/lemma\/tests", ""), "\.class", "Test", "")<CR> <CR>
+" Set spell
+nnoremap <Leader>se :silent! set spell spelllang=en<CR>
 
 " More natural moving on long, wraped lines
 nnoremap k gk
