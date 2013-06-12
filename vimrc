@@ -1,6 +1,5 @@
 " Use Pathogen:
-call pathogen#incubate()
-call pathogen#helptags()
+call pathogen#infect()
 
 " Vundle
 
