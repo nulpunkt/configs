@@ -29,3 +29,7 @@ keycode 0x7D =  equal
 
 keycode 49=dollar asciitilde
 keycode 21=grave acute bar bar bar bar
+
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
