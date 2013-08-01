@@ -1,7 +1,3 @@
-clear mod1
-keycode 115 = Alt_L
-keycode 64 = Meta_L
-keycode 116 = Alt_R
-keycode 113 = Meta_R
-add mod1 = Alt_L Alt_R
-add mod4 = Meta_L Meta_R
+keycode 49=dollar asciitilde
+keycode 21=grave acute bar bar bar bar
+pointer = 1 2 3 4 5 7 6 8 9 10 11 12
