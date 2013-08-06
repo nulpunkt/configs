@@ -73,8 +73,6 @@ nnoremap H <C-w>>
 nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 " Transpose params
 nnoremap <Leader>sp :normal F(ldt,f)i, pF(lxx
-" For lemma project, find the most likley testfile
-nnoremap <Leader>lt :vs <C-R>=substitute(substitute(expand("%:p"), "\/lemma", "\/lemma\/tests", ""), "\.class", "Test", "")<CR> <CR>
 " Set spell
 nnoremap <Leader>se :silent! set spell spelllang=en<CR>
 
@@ -82,4 +80,4 @@ nnoremap <Leader>se :silent! set spell spelllang=en<CR>
 nnoremap k gk
 nnoremap j gj
 
-vmap gl :<C-U>!svn blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
