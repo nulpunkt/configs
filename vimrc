@@ -10,11 +10,10 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'cakebaker/scss-syntax.vim'
-Bundle 'pangloss/vim-javascript'
 Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-rails'
 Bundle 'SirVer/ultisnips'
-Bundle 'mikewest/vimroom'
+Bundle 'shawncplus/phpcomplete.vim'
+Bundle 'tpope/vim-fugitive'
 
 " The usual suspects
 syn on
@@ -56,7 +55,10 @@ au BufRead,BufNewFile *.go set filetype=go
 
 colorscheme jellybeans
 
+set completeopt-=preview
+
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
+au FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType python set expandtab
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
