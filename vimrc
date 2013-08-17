@@ -14,6 +14,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'lukerandall/haskellmode-vim'
 
 " The usual suspects
 syn on
@@ -62,6 +63,7 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType python set expandtab
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au BufEnter *.hs compiler ghc
 
 " Easy window navigation
 nnoremap <C-h> <C-w>h
