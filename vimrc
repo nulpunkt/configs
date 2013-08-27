@@ -15,6 +15,7 @@ Bundle 'SirVer/ultisnips'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
+Bundle 'lukerandall/haskellmode-vim'
 
 " The usual suspects
 syn on
@@ -64,6 +65,7 @@ au FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set expandtab
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au BufEnter *.hs compiler ghc
 
 nnoremap <Leader>u :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>i :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/integration", ""), "\.php", "Test.php", "")<CR> <CR>
