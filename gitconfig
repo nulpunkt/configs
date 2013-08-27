@@ -8,3 +8,6 @@
 	co = checkout
 	aa = add --all
 	head = log -1
+	ds = diff --staged
+[push]
+	default = matching
