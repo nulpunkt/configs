@@ -14,6 +14,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'vim-ruby/vim-ruby'
 
 " The usual suspects
 syn on
@@ -59,9 +60,21 @@ set completeopt-=preview
 
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
+au FileType ruby set omnifunc=rubycomplete#Complete
 autocmd FileType python set expandtab
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
+nnoremap <Leader>u :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/unit", ""), "\.php", "Test.php", "")<CR> <CR>
+nnoremap <Leader>i :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/integration", ""), "\.php", "Test.php", "")<CR> <CR>
+
+noremap ý /
+noremap å {
+inoremap å {
+inoremap é (
+inoremap ï )
+noremap → [
+noremap œ ]
 
 " Easy window navigation
 nnoremap <C-h> <C-w>h
