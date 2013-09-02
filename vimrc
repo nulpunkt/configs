@@ -97,4 +97,6 @@ nnoremap <Leader>se :silent! set spell spelllang=en<CR>
 nnoremap k gk
 nnoremap j gj
 
+nnoremap <Enter> :nohlsearch<CR><Enter>
+
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
