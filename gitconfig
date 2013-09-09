@@ -11,3 +11,5 @@
 	ds = diff --staged
 [push]
 	default = matching
+[color]
+	ui = true
