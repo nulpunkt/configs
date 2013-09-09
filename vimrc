@@ -16,6 +16,7 @@ Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'elzr/vim-json'
 
 " The usual suspects
 syn on
