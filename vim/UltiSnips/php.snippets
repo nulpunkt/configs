@@ -1,14 +1,35 @@
 snippet tc "A test class"
 <?php
 
-/**
- * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`} 
- */
-class $1 extends \PHPUnit_Framework_TestCase
+class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCase
 {
 	public function test$2()
 	{
 		$0
 	}
+}
+endsnippet
+
+snippet class "A class"
+class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+{
+    public function __construct($2)
+    {
+        $0
+    }
+}
+endsnippet
+
+snippet la "Lambda function without use"
+function (${1})
+{
+	$0
+}
+endsnippet
+
+snippet lau "Lambda function with use"
+function (${1}) use (${2})
+{
+	$0
 }
 endsnippet
