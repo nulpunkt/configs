@@ -1,3 +1,7 @@
 keycode 49=dollar asciitilde
 keycode 21=grave acute bar bar bar bar
 pointer = 1 2 3 4 5 7 6 8 9 10 11 12
+
+remove Lock = Caps_Lock
+keysym Caps_Lock = Control_L
+add Control = Control_L
