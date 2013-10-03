@@ -48,9 +48,12 @@ let mapleader=","
 let g:ctrlp_working_path_mode = '0'
 
 " Ultisnips
-let g:UltiSnipsExpandTrigger="<tab>" 
-let g:UltiSnipsJumpForwardTrigger="<tab>" 
-let g:UltiSnipsJumpBackwardTrigger="<s-tab>" 
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
+
+" let g:syntastic_php_checkers=['php']
+let g:syntastic_php_checkers=['php', 'phpcs']
 
 syntax on
 filetype on
