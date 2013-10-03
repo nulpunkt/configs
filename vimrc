@@ -66,38 +66,47 @@ set completeopt-=preview
 autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType ruby set omnifunc=rubycomplete#Complete
-autocmd FileType python set expandtab
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au BufEnter *.hs compiler ghc
+autocmd BufWritePre * :%s/\s\+$//e
 
+" Stuff for finding test files
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ai :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/integration", ""), "\.php", "Test.php", "")<CR> <CR>
+nnoremap <Leader>ad :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/database", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>cu :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ci :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/integration", ""), "\.php", "Test.php", "")<CR> <CR>
 
-noremap ý /
-noremap å {
-inoremap å {
+" Make the directory the current file should reside in
+nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
+
+" Parenthesis are a pain
 inoremap é (
 inoremap ï )
-noremap → [
-noremap œ ]
 
 " Easy window navigation
 nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+" Easy new tab
+command T tabnew
+
 " Easy window resize
 nnoremap L <C-w><
 nnoremap H <C-w>>
+
 " File in the current directory
 nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
+
 " Transpose params
 nnoremap <Leader>sp :normal F(ldt,f)i, pF(lxx
+
 " Set spell
 nnoremap <Leader>se :silent! set spell spelllang=en<CR>
+
 
 " More natural moving on long, wraped lines
 nnoremap k gk
