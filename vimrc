@@ -21,7 +21,7 @@ Bundle 'elzr/vim-json'
 " The usual suspects
 syn on
 set nocompatible
-set number
+set relativenumber
 set smartindent
 set tabstop=4
 set shiftwidth=4
@@ -92,7 +92,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Easy new tab
-command T tabnew
+command! T tabnew
 
 " Easy window resize
 nnoremap L <C-w><
