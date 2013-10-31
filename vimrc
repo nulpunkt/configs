@@ -9,12 +9,10 @@ call vundle#rc()
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
-Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'lukerandall/haskellmode-vim'
 Bundle 'elzr/vim-json'
 
@@ -69,7 +67,7 @@ au FileType ruby set omnifunc=rubycomplete#Complete
 autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au BufEnter *.hs compiler ghc
-autocmd BufWritePre * :%s/\s\+$//e
+autocmd BufWritePre *.php :%s/\s\+$//e
 
 " Stuff for finding test files
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
