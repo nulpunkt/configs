@@ -1,6 +1,6 @@
 [user]
 	email = nulpunkt@gmail.com
-	name = Jesper
+	name = Jesper Skovgaard Nielsen
 
 [alias]
 	st = status
@@ -10,6 +10,6 @@
 	head = log -1
 	ds = diff --staged
 [push]
-	default = matching
+	default = current
 [color]
 	ui = true
