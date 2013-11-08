@@ -79,6 +79,9 @@ nnoremap <Leader>ci :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox"
 " Make the directory the current file should reside in
 nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 
+" fix tmux's retarded \015 instead of line break
+nnoremap <Leader>tp :s/\\015/\r/g<CR>
+
 " Parenthesis are a pain
 inoremap é (
 inoremap ï )
