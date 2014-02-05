@@ -40,7 +40,7 @@ set clipboard=unnamed
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
 
-let mapleader=","
+let mapleader=" "
 
 " Cool search plugin
 let g:ctrlp_working_path_mode = '0'
@@ -80,11 +80,12 @@ nnoremap <Leader>ci :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox"
 nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 
 " fix tmux's retarded \015 instead of line break
-nnoremap <Leader>tp :s/\\015/\r/g<CR>
+nnoremap <Leader>p :s/\\015/\r/g<CR>
 
 " Parenthesis are a pain
 inoremap é (
 inoremap ï )
+inoremap ½ $
 
 " Easy window navigation
 nnoremap <C-h> <C-w>h
@@ -93,7 +94,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
 " Easy new tab
-command! T tabnew
+nnoremap <Leader>t :tabnew<CR>
 
 " Easy window resize
 nnoremap L <C-w><
