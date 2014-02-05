@@ -1,11 +1,12 @@
 [user]
-	email = nulpunkt@gmail.com
+	email = jesper@runlevel0.dk
 	name = Jesper Skovgaard Nielsen
 
 [alias]
 	st = status
 	ci = commit
 	co = checkout
+	b = branch
 	aa = add --all
 	head = log -1
 	ds = diff --staged
