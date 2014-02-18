@@ -80,7 +80,9 @@ nnoremap <Leader>ci :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox"
 nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 
 " fix tmux's retarded \015 instead of line break
-nnoremap <Leader>p :s/\\015/\r/g<CR>
+nnoremap <Leader>f :s/\\015/\r/g<CR>
+
+set pastetoggle=<Leader>p
 
 " Parenthesis are a pain
 inoremap é (
