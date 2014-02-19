@@ -10,6 +10,7 @@
 	aa = add --all
 	head = log -1
 	ds = diff --staged
+	sb = "!git co `git b | selecta`"
 [push]
 	default = current
 [color]
