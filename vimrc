@@ -39,6 +39,7 @@ set hlsearch
 set clipboard=unnamed
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
+set wildmenu
 
 let mapleader=" "
 
