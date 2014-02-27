@@ -53,6 +53,7 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 " let g:syntastic_php_checkers=['php']
 let g:syntastic_php_checkers=['php', 'phpcs']
+let g:syntastic_php_phpcs_args = '--standard=PSR2'
 
 syntax on
 filetype on
