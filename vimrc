@@ -70,6 +70,7 @@ autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setl
 autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au BufEnter *.hs compiler ghc
 autocmd BufWritePre *.php :%s/\s\+$//e
+au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 " Stuff for finding test files
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
