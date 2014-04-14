@@ -96,6 +96,7 @@ au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal 
 
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
+au Filetype clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au VimEnter *.clj RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 
