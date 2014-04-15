@@ -94,6 +94,8 @@ au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au FileType ruby set omnifunc=rubycomplete#Complete
 au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
+au Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 au Filetype clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
