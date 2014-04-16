@@ -11,22 +11,23 @@ class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnit_Framework_TestCas
 endsnippet
 
 snippet class "A class"
-class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+<?php
+
+namespace $1;
+
+class ${2:`!p snip.rv=snip.fn.split('.')[0]`}
 {
-    public function __construct($2)
-    {
-        $0
-    }
+    construct$0
 }
 endsnippet
 
-snippet la "Lambda function without use"
+snippet la "Lambda function without use" [i]
 function (${1}) {
 	$0
 }
 endsnippet
 
-snippet lau "Lambda function with use"
+snippet lau "Lambda function with use" [i]
 function (${1}) use (${2})
 {
 	$0
