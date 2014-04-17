@@ -150,6 +150,6 @@ nnoremap <Enter> :nohlsearch<CR><Enter>
 
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
-function! MidjeTestFacts(facts)
-	execute "Eval (use 'midje.repl) (and (load-facts \"" . a:facts . "\") (check-facts))"
+function! MidjeTestFacts(filter)
+	execute "Eval (use 'midje.repl) (and (load-facts " . a:filter . ") (check-facts))"
 endfunction
