@@ -11,13 +11,17 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
+Bundle 'honza/vim-snippets'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
-Bundle 'lukerandall/haskellmode-vim'
 Bundle 'elzr/vim-json'
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'tpope/vim-fireplace'
+Bundle 'guns/vim-clojure-static'
 
 " The usual suspects
-syn on
+syntax on
+filetype plugin on
 set nocompatible
 set relativenumber
 set smartindent
@@ -55,23 +59,46 @@ let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 let g:syntastic_javascript_checkers = ['jshint']
 
-syntax on
-filetype on
-au BufRead,BufNewFile *.go set filetype=go
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
 
 colorscheme jellybeans
 
 set completeopt-=preview
 
-autocmd FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
+au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
+au BufWritePre *.php :%s/\s\+$//e
+
+au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
 au FileType ruby set omnifunc=rubycomplete#Complete
-autocmd Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
-autocmd Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
-autocmd Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
-au BufEnter *.hs compiler ghc
-autocmd BufWritePre *.php :%s/\s\+$//e
+au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
+
+au Filetype clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au VimEnter *.clj RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
 
 " Stuff for finding test files
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
@@ -115,7 +142,6 @@ nnoremap <Leader>sp :normal F(ldt,f)i, pF(lxx
 " Set spell
 nnoremap <Leader>se :silent! set spell spelllang=en<CR>
 
-
 " More natural moving on long, wraped lines
 nnoremap k gk
 nnoremap j gj
@@ -123,3 +149,8 @@ nnoremap j gj
 nnoremap <Enter> :nohlsearch<CR><Enter>
 
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
+
+function! MidjeTestFacts(filter)
+	Require
+	execute "Eval (use 'midje.repl) (and (load-facts " . a:filter . ") (check-facts))"
+endfunction
