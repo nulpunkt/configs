@@ -130,6 +130,7 @@ nnoremap <C-l> <C-w>l
 
 " Easy new tab
 nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>b :Gblame -w<CR>
 
 " Easy window resize
 nnoremap L <C-w><
