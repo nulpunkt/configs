@@ -45,6 +45,7 @@ set clipboard=unnamed
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
 set wildmenu
+set shellcmdflag=-ic
 
 let mapleader=" "
 
@@ -112,12 +113,16 @@ nnoremap <Leader>ai :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/a
 nnoremap <Leader>ad :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/database", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>cu :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ci :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/integration", ""), "\.php", "Test.php", "")<CR> <CR>
+nnoremap <Leader>cd :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/database", ""), "\.php", "Test.php", "")<CR> <CR>
 
 " Make the directory the current file should reside in
 nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 
 " fix tmux's retarded \015 instead of line break
 nnoremap <Leader>f :s/\\015/\r/g<CR>
+
+" Open files in a new tab
+noremap gf <c-w>gF
 
 set pastetoggle=<F11>
 
@@ -134,6 +139,7 @@ nnoremap <C-l> <C-w>l
 
 " Easy new tab
 nnoremap <Leader>t :tabnew<CR>
+nnoremap <Leader>b :Gblame -w<CR>
 
 " Easy window resize
 nnoremap L <C-w><
