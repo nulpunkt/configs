@@ -45,7 +45,7 @@ set clipboard=unnamed
 " Dat pesky wait between <esc>O and insert..
 set timeout timeoutlen=1000 ttimeoutlen=100
 set wildmenu
-set shellcmdflag=-ic
+set shellcmdflag=-c
 
 let mapleader=" "
 
