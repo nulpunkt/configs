@@ -15,10 +15,8 @@ Bundle 'honza/vim-snippets'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-static'
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'wting/rust.vim'
 
 " The usual suspects
 syntax on
