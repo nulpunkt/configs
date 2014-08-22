@@ -100,10 +100,6 @@ let g:ghc = "/usr/bin/ghc"
 
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
-au Filetype clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
-au VimEnter *.clj RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-
 " Stuff for finding test files
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ai :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/integration", ""), "\.php", "Test.php", "")<CR> <CR>
