@@ -15,9 +15,8 @@ Bundle 'honza/vim-snippets'
 Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'tpope/vim-fireplace'
-Bundle 'guns/vim-clojure-static'
+Bundle 'lukerandall/haskellmode-vim'
+Bundle 'wting/rust.vim'
 
 " The usual suspects
 syntax on
@@ -93,6 +92,11 @@ au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au FileType ruby set omnifunc=rubycomplete#Complete
 au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
+au Filetype haskell setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au BufEnter *.hs compiler ghc
+let g:haddock_browser = "/usr/bin/google-chrome"
+let g:ghc = "/usr/bin/ghc"
 
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
