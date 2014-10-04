@@ -95,6 +95,7 @@ au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal 
 
 au Filetype haskell setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au BufEnter *.hs compiler ghc
+au BufEnter *.cabal setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 let g:haddock_browser = "/usr/bin/google-chrome"
 let g:ghc = "/usr/bin/ghc"
 
