@@ -16,7 +16,6 @@ Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
 Bundle 'lukerandall/haskellmode-vim'
-Bundle 'wting/rust.vim'
 
 " The usual suspects
 syntax on
