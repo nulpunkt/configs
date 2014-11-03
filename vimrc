@@ -21,7 +21,7 @@ Bundle 'lukerandall/haskellmode-vim'
 syntax on
 filetype plugin on
 set nocompatible
-set relativenumber
+set number
 set smartindent
 set tabstop=4
 set shiftwidth=4
