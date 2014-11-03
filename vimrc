@@ -92,6 +92,8 @@ au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au FileType ruby set omnifunc=rubycomplete#Complete
 au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
+au Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
 au Filetype haskell setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 au BufEnter *.hs compiler ghc
 au BufEnter *.cabal setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
