@@ -87,7 +87,7 @@ set completeopt-=preview
 
 au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
-au BufWritePre *.php :%s/\s\+$//e
+au BufWritePre *.php,*.rb :%s/\s\+$//e
 
 au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
