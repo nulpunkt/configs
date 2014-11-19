@@ -77,6 +77,8 @@ let g:rbpt_colorpairs = [
     \ ]
 
 let g:rbpt_max = 16
+let g:ctrlp_max_depth = 40
+let g:ctrlp_max_files = 0
 let g:rbpt_loadcmd_toggle = 0
 
 colorscheme jellybeans
