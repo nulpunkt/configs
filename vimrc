@@ -166,3 +166,11 @@ function! MidjeTestFacts(filter)
 	Require
 	execute "Eval (use 'midje.repl) (and (load-facts " . a:filter . ") (check-facts))"
 endfunction
+
+nnoremap <leader>gp :Ggrepphp 
+command! -nargs=* Ggrepphp call MyGGrep('<args>', 'php')
+
+fun! MyGGrep(p, ft)
+	exec ':r!git grep -in "' . a:p . '" -- "*.' . a:ft . '"'
+	normal ggdd
+endfunction
