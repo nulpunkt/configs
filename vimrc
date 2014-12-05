@@ -167,5 +167,4 @@ command! -nargs=* Ggrepphp call MyGGrep('<args>', 'php')
 
 fun! MyGGrep(p, ft)
 	exec ':r!git grep -in "' . a:p . '" -- "*.' . a:ft . '"'
-	normal ggdd
 endfunction
