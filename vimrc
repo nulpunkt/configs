@@ -145,6 +145,9 @@ nnoremap <Leader>b :Gblame -w<CR>
 nnoremap L <C-w><
 nnoremap H <C-w>>
 
+" Ctags, open in new tab
+nmap <C-]> <C-w><C-]><C-w>T
+
 " File in the current directory
 nnoremap <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
 
