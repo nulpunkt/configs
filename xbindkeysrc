@@ -1,0 +1,9 @@
+"mpc toggle"
+    m:0x10 + c:172
+    Mod2 + XF86AudioPlay 
+"mpc prev"
+    m:0x10 + c:173
+    Mod2 + XF86AudioPrev
+"mpc next"
+    m:0x10 + c:171
+    Mod2 + XF86AudioNext
