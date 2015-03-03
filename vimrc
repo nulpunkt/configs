@@ -16,6 +16,7 @@ Bundle 'honza/vim-snippets'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
 Bundle 'lukerandall/haskellmode-vim'
+Bundle 'zah/nimrod.vim'
 
 " The usual suspects
 syntax on
@@ -168,8 +169,8 @@ nnoremap <Enter> :nohlsearch<CR><Enter>
 vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR>,<C-R>=line("'>") <CR>p <CR>
 
 nnoremap <leader>gp :Ggrepphp 
-command! -nargs=* Ggrepphp call MyGGrep('<args>', 'php')
+command! -nargs=* Ggrepphp call MyGGrep('<args>', '*.php *.phtml')
 
 fun! MyGGrep(p, ft)
-	exec ':r!git grep -in "' . a:p . '" -- "*.' . a:ft . '"'
+	exec ':r!git grep -in "' . a:p . '" -- ' . a:ft
 endfunction
