@@ -88,7 +88,7 @@ set completeopt-=preview
 
 au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
-au FileType php nnoremap <leader>o :exec RunPhpTest()<cr>
+au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au BufWritePre *.php,*.rb :%s/\s\+$//e
 
 au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
@@ -179,10 +179,10 @@ endfunction
 fun! RunPhpTest()
     let current_name = expand('%')
     if match(current_name, 'Test.php$') != -1
-        let g:phptestfile = current_name
+        let s:phptestfile = current_name
     endif
-    if exists("g:phptestfile")
-        exec ':!phpunit '.g:phptestfile
+    if exists("s:phptestfile")
+        exec ':!phpunit '.s:phptestfile
     else
         echo "No php test file set yet"
     endif
