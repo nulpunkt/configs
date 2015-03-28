@@ -1,0 +1,16 @@
+Chain INPUT (policy DROP)
+target     prot opt source               destination         
+ACCEPT     all  --  anywhere             anywhere             state RELATED,ESTABLISHED
+DROP       tcp  --  anywhere             anywhere             tcp flags:FIN,SYN,RST,PSH,ACK,URG/NONE
+DROP       tcp  --  anywhere             anywhere             tcp flags:!FIN,SYN,RST,ACK/SYN state NEW
+ACCEPT     all  --  anywhere             anywhere            
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:http
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:https
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:ssh
+ACCEPT     tcp  --  anywhere             anywhere             tcp dpt:smtp
+
+Chain FORWARD (policy ACCEPT)
+target     prot opt source               destination         
+
+Chain OUTPUT (policy ACCEPT)
+target     prot opt source               destination         
