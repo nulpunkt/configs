@@ -7,3 +7,7 @@ export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 PROMPT_COMMAND='__git_ps1 "\[\e[0m\]\w" "\\\$ "'
 source $HOME/configs/git-prompt.sh
+
+# Disable all behaivoir on <C-s>
+stty -ixon
+bind -r '\C-s'
