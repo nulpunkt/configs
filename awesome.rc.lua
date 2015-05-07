@@ -449,8 +449,8 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-os.execute("xmodmap /home/jesper/.Xmodmap &")
-os.execute("gnome-settings-daemon &")
+os.execute("unity-settings-daemon &")
 os.execute("xbindkeys &")
+os.execute("xmodmap ~/.Xmodmap &")
 
 -- }}}
