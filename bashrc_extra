@@ -11,3 +11,6 @@ source $HOME/configs/git-prompt.sh
 # Disable all behaivoir on <C-s>
 stty -ixon
 bind -r '\C-s'
+
+# Easy paste
+alias xpaste='xclip -out'
