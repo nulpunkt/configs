@@ -124,7 +124,7 @@ nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 " fix tmux's retarded \015 instead of line break
 nnoremap <Leader>f :s/\\015/\r/g<CR>
 " fix log files that are on one line
-nnoremap <Leader>l :%s/#/\r#/g<CR>
+nnoremap <Leader>l :%s/#/\r#/g<CR>:%s/\\n//g<CR>
 
 " Open files in a new tab
 noremap gf <c-w>gF
