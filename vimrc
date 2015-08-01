@@ -15,8 +15,6 @@ Bundle 'honza/vim-snippets'
 " Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
-Bundle 'lukerandall/haskellmode-vim'
-Bundle 'zah/nimrod.vim'
 
 " The usual suspects
 syntax on
