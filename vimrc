@@ -15,6 +15,8 @@ Bundle 'honza/vim-snippets'
 " Bundle 'shawncplus/phpcomplete.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
+Bundle 'tpope/vim-fireplace'
+Bundle 'luochen1990/rainbow'
 
 " The usual suspects
 syntax on
@@ -56,29 +58,10 @@ let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 let g:syntastic_javascript_checkers = ['jshint']
 
-let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
-
-let g:rbpt_max = 16
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
-let g:rbpt_loadcmd_toggle = 0
+
+let g:rainbow_active = 1
 
 colorscheme jellybeans
 
