@@ -106,6 +106,8 @@ nnoremap <Leader>m :!mkdir -p %:h<CR><CR>
 nnoremap <Leader>f :s/\\015/\r/g<CR>
 " fix log files that are on one line
 nnoremap <Leader>l :%s/#/\r#/g<CR>:%s/\\n//g<CR>
+" Copy the contents of the current file into copy buffer
+nnoremap <leader>cc :!cat % \| xclip -selection clipboard <cr><cr>
 
 " Open files in a new tab
 noremap gf <c-w>gF
