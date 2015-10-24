@@ -71,7 +71,9 @@ au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
-au BufWritePre *.php,*.rb :%s/\s\+$//e
+au BufWritePre *.php,*.rb,*.py :%s/\s\+$//e
+
+au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
 au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
@@ -172,5 +174,17 @@ fun! RunPhpTest()
         exec ':!phpunit '.s:phptestfile
     else
         echo "No php test file set yet"
+    endif
+endfunction
+
+fun! RunPythonTest()
+    let current_name = expand('%')
+    if match(current_name, '_test.py$') != -1
+        let s:pytestfile = current_name
+    endif
+    if exists("s:pytestfile")
+        exec ':!pyrg '.s:pytestfile
+    else
+        echo "No python test file set yet"
     endif
 endfunction
