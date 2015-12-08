@@ -8,7 +8,7 @@ call vundle#rc()
 
 " Let Vundle manage Vundle (required)!
 Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
+Bundle 'junegunn/fzf'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'honza/vim-snippets'
@@ -47,7 +47,7 @@ set wildmenu
 let mapleader=" "
 
 " Cool search plugin
-let g:ctrlp_working_path_mode = '0'
+nnoremap <C-p><leader> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./node_modules -o -path ./.git -o -path ./library/vendor -o -path ./coverage -o -path ./vendor -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components -o -path ./public \) -prune -o -print', 'sink': 'e' })<CR>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
