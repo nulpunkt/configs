@@ -75,6 +75,8 @@ au BufWritePre *.php,*.rb,*.py :%s/\s\+$//e
 
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
+au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
+
 au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au FileType ruby set omnifunc=rubycomplete#Complete
@@ -186,5 +188,18 @@ fun! RunPythonTest()
         exec ':!pyrg '.s:pytestfile
     else
         echo "No python test file set yet"
+    endif
+endfunction
+
+fun! RunClojureTest()
+    let current_name = expand('%')
+    if match(current_name, '_test.clj$') != -1
+        let s:cljtestns = substitute(substitute(substitute(substitute(current_name, ".\/test\/", "", ""), ".clj", "", ""), '\/', '.', ''), "_", '-', '')
+    endif
+    if exists("s:cljtestns")
+        exec ':silent %Eval'
+        exec ':RunTests '.s:cljtestns
+    else
+        echo "No clojure test namespace set yet"
     endif
 endfunction
