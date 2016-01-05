@@ -2,7 +2,7 @@
 export EDITOR=vim
 set -o vi
 [ -n "$TMUX" ] && export TERM=screen-256color
-export PATH=$HOME/Bin:$HOME/.cabal/bin:$PATH
+export PATH=$HOME/Bin:$PATH
 export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 PROMPT_COMMAND='__git_ps1 "\[\e[0m\]\w" "\\\$ "'
