@@ -1,8 +1,4 @@
-" Use Pathogen:
-call pathogen#infect()
-
 " Vundle
-
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
