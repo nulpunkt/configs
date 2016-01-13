@@ -1,0 +1,3 @@
+startup_screen = media_library
+ask_before_clearing_playlists = no
+external_editor = vim

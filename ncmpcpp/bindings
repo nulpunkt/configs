@@ -1,0 +1,20 @@
+def_key "k"
+  scroll_up
+
+def_key "j"
+  scroll_down
+
+def_key "l"
+  next_column
+
+def_key "h"
+  previous_column
+
+def_key "2"
+  show_playlist
+
+def_key "5"
+  show_media_library
+
+def_key "5"
+  toggle_media_library_columns_mode
