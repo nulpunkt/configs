@@ -72,8 +72,11 @@ au BufWritePre *.php,*.rb,*.py :%s/\s\+$//e
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
 au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
+au FileType clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+
+au Filetype markdown setlocal ts=2 | setlocal sts=2 | setlocal sw=2 | setlocal tw=79
 
 au FileType ruby set omnifunc=rubycomplete#Complete
 au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
