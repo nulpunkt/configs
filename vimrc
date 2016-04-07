@@ -44,7 +44,7 @@ set wildmenu
 let mapleader=" "
 
 " Cool search plugin
-nnoremap <C-p> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./node_modules -o -path ./.git -o -path ./coverage -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components -o -path ./public \) -prune -o -type f -print', 'sink': 'e' })<CR>
+nnoremap <C-p> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./vendor -o -path ./node_modules -o -path ./.git -o -path ./coverage -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components \) -prune -o -type f -print', 'sink': 'e' })<CR>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
