@@ -13,6 +13,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'elzr/vim-json'
 Bundle 'tpope/vim-fireplace'
 Bundle 'luochen1990/rainbow'
+Bundle 'nulpunkt/php-getter-setter.vim'
 
 " The usual suspects
 syntax on
