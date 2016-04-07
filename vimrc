@@ -68,7 +68,7 @@ au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
-au BufWritePre *.php,*.rb,*.py :%s/\s\+$//e
+au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml :%s/\s\+$//e
 
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
