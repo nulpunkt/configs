@@ -1,14 +1,46 @@
 snippet tc "A test class"
 <?php
 
-class ${1:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnitHelper\TestCase
+namespace 
+
+class ${2:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnitHelper\TestCase
 {
-	public function test$2()
-	{
-		$0
-	}
+    public function test$3()
+    {
+        $0
+    }
 }
 endsnippet
+
+snippet dtc "A database test class"
+<?php
+
+namespace $1;
+
+class ${2:`!p snip.rv=snip.fn.split('.')[0]`} extends \FastSetUpDatabaseTestCase
+{
+    public function test$3()
+    {
+        $0
+    }
+
+    protected function setUp()
+    {
+        parent::setUp();
+    }
+
+    protected function getDataSet()
+    {
+        return $this->createArrayDataSet(
+            [
+                'table' => [
+                ],
+            ]
+        );
+    }
+}
+endsnippet
+
 
 snippet log "Log a statement"
 \SB_Log::get($1)->info($0);
@@ -17,14 +49,11 @@ endsnippet
 snippet class "A class"
 <?php
 
-namespace $1;
+namespace $1
 
-class ${2:`!p snip.rv=snip.fn.split('.')[0]`}
+class `!p snip.rv=snip.fn.split('.')[0]`
 {
-    public function __construct($3)
-    {
-        $0
-    }
+	construct$0
 }
 endsnippet
 
@@ -35,8 +64,22 @@ public function ${1}(${3})
 }
 endsnippet
 
+snippet pubs "A public static function"
+public static function ${1}(${3})
+{
+	${0}
+}
+endsnippet
+
 snippet pri "A private function"
 private function ${1}(${3})
+{
+	${0}
+}
+endsnippet
+
+snippet pro "A protected function"
+protected function ${1}(${3})
 {
 	${0}
 }
