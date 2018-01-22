@@ -77,7 +77,8 @@ wallpaper = "/home/jesper/Pictures/wallpapers/rain-backlight.jpg"
 -- {{{ Wallpaper
 if wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(wallpaper, s, true)
+        -- gears.wallpaper.maximized(wallpaper, s, true)
+        gears.wallpaper.centered(wallpaper, s)
     end
 end
 -- }}}
