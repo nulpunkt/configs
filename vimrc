@@ -44,7 +44,7 @@ set wildmenu
 let mapleader=" "
 
 " Cool search plugin
-nnoremap <C-p> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./vendor -o -path ./node_modules -o -path ./.git -o -path ./coverage -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components \) -prune -o -type f -print', 'sink': 'e' })<CR>
+nnoremap <C-p> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./node_modules -o -path ./.git -o -path ./coverage -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components \) -prune -o -type f -print', 'sink': 'e' })<CR>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -54,6 +54,8 @@ let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 let g:syntastic_php_checkers=['php', 'phpcs']
 let g:syntastic_php_phpcs_args = '--standard=PSR2'
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11'
 
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
@@ -68,14 +70,14 @@ au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
-au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml :%s/\s\+$//e
+au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.md,*.cpp,*.h :%s/\s\+$//e
 
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
 au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
 au FileType clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
-au Filetype html setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au Filetype html setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype markdown setlocal ts=2 | setlocal sts=2 | setlocal sw=2 | setlocal tw=79
 
@@ -85,6 +87,10 @@ au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal 
 au Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype json setlocal expandtab
+
+au FileType c nnoremap <leader>o :!clang -lm -Wall % && ./a.out && rm a.out<cr>
+
+au Filetype javascript setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
