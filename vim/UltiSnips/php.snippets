@@ -1,11 +1,16 @@
 snippet tc "A test class"
 <?php
 
-namespace 
+namespace `!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+    snip.rv = m.group().replace('/', '\\')
+`;
 
-class ${2:`!p snip.rv=snip.fn.split('.')[0]`} extends \PHPUnitHelper\TestCase
+class `!p snip.rv=snip.fn.split('.')[0]` extends \PHPUnitHelper\TestCase
 {
-    public function test$3()
+    public function test$1()
     {
         $0
     }
@@ -46,10 +51,31 @@ snippet log "Log a statement"
 \SB_Log::get($1)->info($0);
 endsnippet
 
+snippet interface "Interface declaration template" b
+<?php
+
+namespace `!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+    snip.rv = m.group().replace('/', '\\')
+`;
+
+interface `!p snip.rv=snip.fn.split('.')[0]`
+{
+    $0
+}
+endsnippet
+
 snippet class "A class"
 <?php
 
-namespace $1
+namespace `!p
+relpath = os.path.relpath(path)
+m = re.search(r'[A-Z].+(?=/)', relpath)
+if m:
+    snip.rv = m.group().replace('/', '\\')
+`;
 
 class `!p snip.rv=snip.fn.split('.')[0]`
 {
