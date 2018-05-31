@@ -1,0 +1,16 @@
+ServerAliveInterval 30
+ServerAliveCountMax 10
+TCPKeepAlive no
+ForwardAgent yes
+
+Host *.compute.amazonaws.com
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
+Host beta
+    HostName beta.colourbox.com
+    User jesper
+
+Host netanyahu
+    HostName 192.168.0.101
+    User jesper
