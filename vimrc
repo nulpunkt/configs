@@ -72,6 +72,8 @@ au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
 au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.md,*.cpp,*.h :%s/\s\+$//e
 
+au FileType javascript nnoremap <leader>o :call RunJsTest()<cr>
+
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
 
 au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
@@ -176,6 +178,18 @@ fun! RunPhpTest()
         exec ':!phpunit '.s:phptestfile
     else
         echo "No php test file set yet"
+    endif
+endfunction
+
+fun! RunJsTest()
+    let current_name = expand('%')
+    if match(current_name, 'test.js$') != -1
+        let s:jstestfile = current_name
+    endif
+    if exists("s:jstestfile")
+        exec ':!npm test '.s:jstestfile
+    else
+        echo "No js test file set yet"
     endif
 endfunction
 
