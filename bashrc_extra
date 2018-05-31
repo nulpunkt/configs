@@ -15,3 +15,6 @@ bind -r '\C-s'
 # Easy paste
 alias xpaste='xclip -out'
 alias say='echo "$1" | espeak -s 120 2>/dev/null'
+
+[ `ps aux | grep ssh-agent | wc -l` -eq 1 ] && ssh-agent | grep -v echo > ~/.bash_ssh_agent && eval `cat .bash_ssh_agent` && ssh-add -q
+eval `cat ~/.bash_ssh_agent`
