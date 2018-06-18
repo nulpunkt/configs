@@ -3,6 +3,8 @@ ServerAliveCountMax 10
 TCPKeepAlive no
 ForwardAgent yes
 
+IdentityFile ~/.ssh/id_rsa
+
 Host *.compute.amazonaws.com
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
