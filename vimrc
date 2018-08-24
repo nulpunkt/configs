@@ -62,6 +62,8 @@ let g:ctrlp_max_files = 0
 
 let g:rainbow_active = 1
 
+let g:vim_json_syntax_conceal = 0
+
 colorscheme jellybeans
 
 set completeopt-=preview
