@@ -7,6 +7,9 @@
 "mpc next"
     m:0x10 + c:171
     Mod2 + XF86AudioNext
+"pactl set-sink-mute 0 0"
+    m:0x10 + c:121
+    Mod2 + XF86AudioMute
 "pactl set-sink-volume 0 '+1%'"
     m:0x10 + c:123
     Mod2 + XF86AudioRaiseVolume
