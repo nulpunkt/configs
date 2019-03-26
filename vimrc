@@ -99,7 +99,7 @@ au Filetype javascript setlocal expandtab | setlocal ts=2 | setlocal sts=2 | set
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 " Stuff for finding test files
-nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
+nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "api", "api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ai :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/integration", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ad :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/database", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>cu :vs <C-R>=substitute(substitute(expand("%:p"), "\/colourbox", "\/colourbox\/tests/unit", ""), "\.php", "Test.php", "")<CR> <CR>
