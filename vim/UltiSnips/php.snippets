@@ -29,7 +29,7 @@ class ${2:`!p snip.rv=snip.fn.split('.')[0]`} extends \FastSetUpDatabaseTestCase
         $0
     }
 
-    protected function setUp()
+    protected function setUp(): void
     {
         parent::setUp();
     }
@@ -142,4 +142,11 @@ $${1}->expects($this->${2}())->method('${3}')
     ->with(${4})
     ->will($this->returnValue(${5}));
 $0
+endsnippet
+
+snippet s "setup"
+public function setUp(): void
+{
+    $0
+}
 endsnippet
