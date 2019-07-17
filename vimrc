@@ -82,15 +82,17 @@ au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
 au FileType clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype html setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au Filetype css setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype markdown setlocal ts=2 | setlocal sts=2 | setlocal sw=2 | setlocal tw=79
 
 au FileType ruby set omnifunc=rubycomplete#Complete
 au Filetype ruby setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au FileType ruby nnoremap <leader>o :call RunRubyTest()<cr>
 
 au Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
-au Filetype json setlocal expandtab
+au Filetype json setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au FileType c nnoremap <leader>o :!clang -lm -Wall % && ./a.out && rm a.out<cr>
 
@@ -99,6 +101,7 @@ au Filetype javascript setlocal expandtab | setlocal ts=2 | setlocal sts=2 | set
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
 " Stuff for finding test files
+nnoremap <Leader>bu :vs <C-R>=substitute(substitute(expand("%:p"), "backend", "backend\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>au :vs <C-R>=substitute(substitute(expand("%:p"), "api", "api\/test/unit", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ai :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/integration", ""), "\.php", "Test.php", "")<CR> <CR>
 nnoremap <Leader>ad :vs <C-R>=substitute(substitute(expand("%:p"), "\/api", "\/api\/test/database", ""), "\.php", "Test.php", "")<CR> <CR>
@@ -197,6 +200,19 @@ fun! RunJsTest()
         echo "No js test file set yet"
     endif
 endfunction
+
+fun! RunRubyTest()
+    let current_name = expand('%')
+    if match(current_name, '_test.rb$') != -1
+        let s:rbtestfile = current_name
+    endif
+    if exists("s:rbtestfile")
+        exec ':!ruby '.s:rbtestfile
+    else
+        echo "No ruby test file set yet"
+    endif
+endfunction
+
 
 fun! RunPythonTest()
     let current_name = expand('%')
