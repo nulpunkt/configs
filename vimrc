@@ -52,7 +52,7 @@ let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
 
 let g:syntastic_php_checkers=['php', 'phpcs']
-let g:syntastic_php_phpcs_args = '--standard=PSR2'
+let g:syntastic_php_phpcs_args = '--standard=PSR12'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
@@ -72,7 +72,7 @@ au FileType php map <C-c> :w<CR>:!/usr/bin/php -l %<CR>
 au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
-au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.md,*.cpp,*.h :%s/\s\+$//e
+au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.jsx,*.css,*.md,*.cpp,*.h :%s/\s\+$//e
 
 au FileType javascript nnoremap <leader>o :call RunJsTest()<cr>
 
@@ -93,6 +93,7 @@ au FileType ruby nnoremap <leader>o :call RunRubyTest()<cr>
 au Filetype cucumber setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au Filetype json setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au Filetype yaml setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au FileType c nnoremap <leader>o :!clang -lm -Wall % && ./a.out && rm a.out<cr>
 
