@@ -175,6 +175,8 @@ vmap gl :<C-U>!git blame <C-R>=expand("%:p") <CR> \| sed -n <C-R>=line("'<") <CR
 nnoremap <leader>gp :Ggrepphp 
 command! -nargs=* Ggrepphp call MyGGrep('<args>', "'*.php' '*.phtml'")
 
+command! PhpscStyleFix :!patch -p0 -ui <(./vendor/bin/phpcs --report=diff --standard=PSR12 --extensions=php %)
+
 fun! MyGGrep(p, ft)
 	exec ':r!git grep -in "' . a:p . '" -- ' . a:ft
 endfunction

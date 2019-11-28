@@ -14,6 +14,7 @@ bind -r '\C-s'
 
 # Easy paste
 alias xpaste='xclip -out'
+alias xcopy='xclip -in'
 alias say='echo "$1" | espeak -s 120 2>/dev/null'
 
 SSH_AUTH_SOCK=`find /tmp/ -type s -name agent.\* 2> /dev/null | grep '/tmp/ssh-.*/agent.*' | head -n1`; export SSH_AUTH_SOCK;
