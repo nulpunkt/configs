@@ -16,3 +16,6 @@
 "pactl set-sink-volume 0 '-1%'"
     m:0x10 + c:122
     Mod2 + XF86AudioLowerVolume
+"gnome-screensaver-command -l"
+	m:0x10 + c:74
+    Mod2 + F8
