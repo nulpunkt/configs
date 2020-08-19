@@ -137,10 +137,10 @@ function (${1}) use (${2})
 }
 endsnippet
 
-snippet ex "phpunit expectation"
+snippet er "phpunit expectation return"
 $${1}->expects($this->${2}())->method('${3}')
     ->with(${4})
-    ->will($this->returnValue(${5}));
+    ->willReturn(${5});
 $0
 endsnippet
 
