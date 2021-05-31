@@ -7,6 +7,7 @@ export LANG=en_US.utf8
 export LC_ALL=en_US.utf8
 PROMPT_COMMAND='__git_ps1 "\[\e[0m\]\w" "\\\$ "'
 source $HOME/configs/git-prompt.sh
+export AWS_REGION=eu-west-1
 
 # Disable all behaivoir on <C-s>
 stty -ixon
@@ -17,4 +18,23 @@ alias xpaste='xclip -out'
 alias xcopy='xclip -in'
 alias say='echo "$1" | espeak -s 120 2>/dev/null'
 
-SSH_AUTH_SOCK=`find /tmp/ -type s -name agent.\* 2> /dev/null | grep '/tmp/ssh-.*/agent.*' | head -n1`; export SSH_AUTH_SOCK;
+SSH_ENV="$HOME/.ssh/agent-environment"
+
+function start_agent {
+    /usr/bin/ssh-agent | sed 's/^echo/#echo/' > "${SSH_ENV}"
+    chmod 600 "${SSH_ENV}"
+    . "${SSH_ENV}" > /dev/null
+    /usr/bin/ssh-add;
+}
+
+# Source SSH settings, if applicable
+
+if [ -f "${SSH_ENV}" ]; then
+    . "${SSH_ENV}" > /dev/null
+    #ps ${SSH_AGENT_PID} doesn't work under cywgin
+    ps -ef | grep ${SSH_AGENT_PID} | grep ssh-agent$ > /dev/null || {
+        start_agent;
+    }
+else
+    start_agent;
+fi
