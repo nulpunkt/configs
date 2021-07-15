@@ -1,3 +1,4 @@
+# sudo xrdb -merge Xresources
 Xft.dpi: 96
 
 XTerm*termName: xterm-256color
