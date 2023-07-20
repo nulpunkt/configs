@@ -2,3 +2,14 @@ clear lock
 clear control
 add control = Caps_Lock Control_L Control_R
 keycode 66 = Control_L Control_L NoSymbol NoSymbol
+
+keycode 87=0x31
+keycode 88=0x32
+keycode 89=0x33
+keycode 83=0x34
+keycode 84=0x35
+keycode 85=0x36
+keycode 79=0x37
+keycode 80=0x38
+keycode 81=0x39
+keycode 90=0x30
