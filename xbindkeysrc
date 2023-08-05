@@ -10,10 +10,10 @@
 "pactl set-sink-mute 0 0"
     m:0x10 + c:121
     Mod2 + XF86AudioMute
-"pactl set-sink-volume 0 '+1%'"
+"pactl set-sink-volume 0 '+2%'"
     m:0x10 + c:123
     Mod2 + XF86AudioRaiseVolume
-"pactl set-sink-volume 0 '-1%'"
+"pactl set-sink-volume 0 '-2%'"
     m:0x10 + c:122
     Mod2 + XF86AudioLowerVolume
 "gnome-screensaver-command -l"
