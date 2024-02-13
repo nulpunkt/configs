@@ -116,10 +116,8 @@ return $0;
 endsnippet
 
 snippet construct "__construct()" b
-private ${1/, /;\n    private /g};
-
 public function __construct(${1:$dependencies})
-{${1/\$(\w+)(, )*/\n        $this->$1 = $$1;/g}
+{
 }
 $0
 endsnippet

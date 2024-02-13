@@ -147,7 +147,7 @@ nnoremap <C-l> <C-w>l
 " Easy new tab
 nnoremap <Leader>t :tabnew<CR>
 " Easy blame
-nnoremap <Leader>b :Gblame -w<CR>
+nnoremap <Leader>b :G blame -w<CR>
 " Easy date
 iab <expr> dts strftime("%F %T")
 
