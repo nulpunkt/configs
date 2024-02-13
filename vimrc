@@ -23,6 +23,7 @@ set number
 set smartindent
 set tabstop=4
 set shiftwidth=4
+set softtabstop=4
 set ruler
 set formatoptions=tcqlron
 "set fileencodings=utf-8,latin2
@@ -44,7 +45,7 @@ set wildmenu
 let mapleader=" "
 
 " Cool search plugin
-nnoremap <C-p> :call fzf#run({ 'source': 'find . \( -name "*.tmp.js" -o -path ./node_modules -o -path ./.git -o -path ./coverage -o -path ./private/node_modules -o -path ./public/js/bower_components -o -path ./bower_components \) -prune -o -type f -print', 'sink': 'e' })<CR>
+nnoremap <C-p> :FZF<cr>
 
 " Ultisnips
 let g:UltiSnipsExpandTrigger="<tab>"
@@ -56,6 +57,8 @@ let g:syntastic_php_phpcs_args = '--standard=PSR12'
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11'
+" let g:syntastic_python_checkers=[]
+" let g:syntastic_disabled_filetypes=['py', 'python']
 
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files = 0
@@ -74,10 +77,12 @@ au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
 au FileType php setlocal expandtab
 au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.jsx,*.css,*.md,*.cpp,*.h :%s/\s\+$//e
+au BufNewFile,BufRead *.tsx set filetype=typescript
 
 au FileType javascript nnoremap <leader>o :call RunJsTest()<cr>
 
 au FileType python nnoremap <leader>o :call RunPythonTest()<cr>
+au FileType python setlocal noexpandtab
 
 au FileType clojure nnoremap <leader>o :call RunClojureTest()<cr>
 au FileType clojure setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
@@ -99,6 +104,7 @@ au Filetype yaml setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal 
 au FileType c nnoremap <leader>o :!clang -lm -Wall % && ./a.out && rm a.out<cr>
 
 au Filetype javascript setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
+au Filetype typescript setlocal expandtab | setlocal ts=2 | setlocal sts=2 | setlocal sw=2
 
 au BufNewFile,BufRead COMMIT_EDITMSG setlocal spell
 
@@ -186,6 +192,7 @@ fun! RunPhpTest()
     if match(current_name, 'Test.php$') != -1
         let s:phptestfile = current_name
     endif
+
     if exists("s:phptestfile")
         exec ':!phpunit '.s:phptestfile
     else
