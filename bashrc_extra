@@ -8,6 +8,8 @@ export LC_ALL=en_US.utf8
 PROMPT_COMMAND='__git_ps1 "\[\e[0m\]\w" "\\\$ "'
 source $HOME/configs/git-prompt.sh
 export AWS_REGION=eu-west-1
+export COMPOSE_DOCKER_CLI_BUILD=0
+export DOCKER_BUILDKIT=0
 
 # Disable all behaivoir on <C-s>
 stty -ixon
