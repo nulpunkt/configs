@@ -7,13 +7,13 @@
 "mpc next"
     m:0x10 + c:171
     Mod2 + XF86AudioNext
-"pactl set-sink-mute 0 0"
+"export N=$(($N+1)) && echo $N >> /tmp/mute"
     m:0x10 + c:121
     Mod2 + XF86AudioMute
-"pactl set-sink-volume `pactl list | grep 'Card #' | grep Card | sed 's/Card #\([0-9]*\)/\1/g' | tail -n1` '+2%'"
+"pactl set-sink-volume '@DEFAULT_SINK@' '+2%'"
     m:0x10 + c:123
     Mod2 + XF86AudioRaiseVolume
-"pactl set-sink-volume `pactl list | grep 'Card #' | grep Card | sed 's/Card #\([0-9]*\)/\1/g' | tail -n1` '-2%'"
+"pactl set-sink-volume '@DEFAULT_SINK@' '-2%'"
     m:0x10 + c:122
     Mod2 + XF86AudioLowerVolume
 "gnome-screensaver-command -l"
