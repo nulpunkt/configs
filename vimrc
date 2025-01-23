@@ -74,7 +74,7 @@ au FileType php set omnifunc=phpcomplete#CompletePHP
 au FileType php nnoremap <leader>o :call RunPhpTest()<cr>
 au FileType php nnoremap K :!pman <cword><cr>
 au FileType php setlocal expandtab
-autocmd BufWritePost *.php silent! !php-cs-fixer fix --rules @PSR12 -q %
+autocmd BufWritePost *.php silent! !command -v php-cs-fixer > /dev/null && php-cs-fixer fix --rules @PSR12 -q %
 
 au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.jsx,*.css,*.md,*.cpp,*.h :%s/\s\+$//e
 au BufNewFile,BufRead *.tsx set filetype=typescript
