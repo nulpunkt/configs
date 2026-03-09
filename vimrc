@@ -76,7 +76,7 @@ au FileType php nnoremap K :!pman <cword><cr>
 au FileType php setlocal expandtab
 autocmd BufWritePost *.php silent! !command -v php-cs-fixer > /dev/null && php-cs-fixer fix --rules @PSR12 -q %
 
-au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.jsx,*.css,*.md,*.cpp,*.h :%s/\s\+$//e
+au BufWritePre *.php,*.rb,*.py,*.clj,*.json,*.sql,*.yml,*.js,*.jsx,*.css,*.md,*.cpp,*.h,*.phtml :%s/\s\+$//e
 au BufNewFile,BufRead *.tsx set filetype=typescript
 
 au FileType javascript nnoremap <leader>o :call RunJsTest()<cr>
