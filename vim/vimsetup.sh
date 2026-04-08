@@ -1,5 +1,4 @@
 #!/bin/sh
-curl -Sso ~/.vim/autoload/pathogen.vim https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
-git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-vim +"BundleInstall" +"qa"
-ln -s ~/.vim/ultisnips_rep/ftdetect/* ~/.vim/ftdetect/
+mkdir -p ~/.config/nvim
+ln -s ~/configs/vim/init.lua ~/.config/nvim/
+ln -s ~/configs/vim/UltiSnips ~/.config/nvim/
