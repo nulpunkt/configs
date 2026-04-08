@@ -5,14 +5,17 @@ ForwardAgent yes
 
 IdentityFile ~/.ssh/id_rsa
 
+Host 10.*
+    User ec2-user
+    IdentityFile ~/.ssh/colourboxfirst.pem
+    ProxyJump jesper@beta.colourbox.com
+    StrictHostKeyChecking no
+    UserKnownHostsFile=/dev/null
+
 Host *.compute.amazonaws.com
     StrictHostKeyChecking no
     UserKnownHostsFile=/dev/null
 
 Host beta
     HostName beta.colourbox.com
-    User jesper
-
-Host netanyahu
-    HostName 192.168.0.101
     User jesper
